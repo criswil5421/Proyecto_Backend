@@ -9,5 +9,5 @@ class Egresado extends Model
     //
     public $timestamps = false;
     protected $guarded = ["id"];
-    protected $table ='egresados';
+    protected $table ='egresado';
 }

@@ -18,7 +18,7 @@ class RangoController extends Controller
     public function create(Request $request)
     {
         
-        Persona::create($request->all());
+        Rango::create($request->all());
         return response()->json(['success' => true]);
     }
 
@@ -26,16 +26,16 @@ class RangoController extends Controller
     public function show($id)
     {
        
-        $cliente= Persona::findOrFail($id);
+        $rango= Rango::findOrFail($id);
         
-        return response()->json($Persona);
+        return response()->json($rango);
     }
 
 
     public function update(Request $request, $id)
     {
         
-            Persona::findOrFail($id)->update($request->all());
+            Rango::findOrFail($id)->update($request->all());
             return response()->json(['success' => true]);
          
     }
@@ -43,7 +43,7 @@ class RangoController extends Controller
     
     public function destroy($id)
     {
-        Persona::findOrFail($id)->delete();
+        Rango::findOrFail($id)->delete();
         return response()->json(['success' => true]);
     }
 }

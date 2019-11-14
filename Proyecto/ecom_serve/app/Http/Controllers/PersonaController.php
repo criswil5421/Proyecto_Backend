@@ -26,7 +26,7 @@ class PersonaController extends Controller
     public function show($id)
     {
        
-        $cliente= Persona::findOrFail($id);
+        $Persona= Persona::findOrFail($id);
         
         return response()->json($Persona);
     }

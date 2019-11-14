@@ -46,8 +46,73 @@ Route::post('egresado', 'EgresadoController@create');
 Route::put('egresado/{id}', 'EgresadoController@update');
 Route::delete('egresado/{id}', 'EgresadoController@destroy');
 
-Route::get('capacitacion', 'CapacitacionController@index');
-Route::get('capacitacion/{id}', 'CapacitacionController@show');
-Route::post('capacitacion', 'CapacitacionController@create');
-Route::put('capacitacion/{id}', 'CapacitacionController@update');
-Route::delete('capacitacion/{id}', 'CapacitacionController@destroy');
+
+Route::get('comentario', 'ComentarioController@index');
+Route::get('comentario/{id}', 'comentarioController@show');
+Route::post('comentario', 'comentarioController@create');
+Route::put('comentario/{id}', 'comentarioController@update');
+Route::delete('comentario/{id}', 'comentarioController@destroy');
+
+Route::get('escuela', 'EscuelaController@index');
+Route::get('escuela/{id}', 'escuelaController@show');
+Route::post('escuela', 'escuelaController@create');
+Route::put('escuela/{id}', 'escuelaController@update');
+Route::delete('escuela/{id}', 'escuelaController@destroy');
+
+
+Route::get('facultad', 'FacultadController@index');
+Route::get('facultad/{id}', 'facultadController@show');
+Route::post('facultad', 'facultadController@create');
+Route::put('facultad/{id}', 'facultadController@update');
+Route::delete('facultad/{id}', 'facultadController@destroy');
+
+
+Route::get('experiencia', 'ExperienciaController@index');
+Route::get('experiencia/{id}', 'ExperienciaController@show');
+Route::post('experiencia', 'ExperienciaController@create');
+Route::put('experiencia/{id}', 'ExperienciaController@update');
+Route::delete('experiencia/{id}', 'ExperienciaController@destroy');
+
+
+Route::get('curso', 'CursoController@index');
+Route::get('curso/{id}', 'CursoController@show');
+Route::post('curso', 'CursoController@create');
+Route::put('curso/{id}', 'CursoController@update');
+Route::delete('curso/{id}', 'CursoController@destroy');
+
+
+Route::get('empresa', 'EmpresaController@index');
+Route::get('empresa/{id}', 'EmpresaController@show');
+Route::post('empresa', 'EmpresaController@create');
+Route::put('empresa/{id}', 'EmpresaController@update');
+Route::delete('empresa/{id}', 'EmpresaController@destroy');
+
+
+Route::get('historial', 'HistorialController@index');
+Route::get('historial/{id}', 'HistorialController@show');
+Route::post('historial', 'HistorialController@create');
+Route::put('historial/{id}', 'HistorialController@update');
+Route::delete('historial/{id}', 'HistorialController@destroy');
+
+
+Route::get('respuesta', 'RespuestaController@index');
+Route::get('respuesta/{id}', 'RespuestaController@show');
+Route::post('respuesta', 'RespuestaController@create');
+Route::put('respuesta/{id}', 'RespuestaController@update');
+Route::delete('respuesta/{id}', 'RespuestaController@destroy');
+
+
+Route::get('oferta', 'OfertaLaboralController@index');
+Route::get('oferta/{id}', 'OfertaLaboralController@show');
+Route::post('oferta', 'OfertaLaboralController@create');
+Route::put('oferta/{id}', 'OfertaLaboralController@update');
+Route::delete('oferta/{id}', 'OfertaLaboralController@destroy');
+
+
+Route::get('perfeccionamiento', 'PerfeccionamientoController@index');
+Route::get('perfeccionamiento/{id}', 'PerfeccionamientoController@show');
+Route::post('perfeccionamiento', 'PerfeccionamientoController@create');
+Route::put('perfeccionamiento/{id}', 'PerfeccionamientoController@update');
+Route::delete('perfeccionamiento/{id}', 'PerfeccionamientoController@destroy');
+
+

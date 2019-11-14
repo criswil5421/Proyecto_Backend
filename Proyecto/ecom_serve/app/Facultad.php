@@ -7,4 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Facultad extends Model
 {
     //
+    public $timestamps = false;
+    protected $guarded = ["id"];
+    protected $table ='facultad';
 }
