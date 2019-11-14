@@ -1,0 +1,35 @@
+  <nav class="nueva">
+        
+      <button id="botonn" type="button" routerLink="/capacitacionform" class="btn btn-info">NUEVA CAPACITACION</button>
+  </nav>  
+  <table class="table table-hover" >
+    <thead >
+      <tr >
+        <th scope="col">ID</th>
+        <th scope="col">COSTO</th>
+        <th scope="col">ENTIDAD</th>
+        <th scope="col">FECHA</th>
+        <th scope="col">HORAS Y CREDITO</th>
+        <th scope="col">LUGAR</th>
+        <th scope="col">TIPO DE EVENTO</th>
+        <th scope="col">EGRESADO ID</th>
+        <th scope="col">PK EGRESADO</th>
+      </tr>
+      
+    </thead>
+    <tbody>
+          <tr class="table" *ngFor="let p of list; index as i">
+              <th scope="row">{{ p.id }}</th>
+              <td>{{ p.costo }}</td>
+              <td>{{ p.entidad }}</td>
+              <td>{{ p.fecha }}</td>
+              <td>{{ p.horas_y_credito }}</td>
+              <td>{{ p.lugar }}</td>
+              <td>{{ p.tipo_de_evento }}</td>
+              <td>{{ p.egresadoID }}</td>
+              <td>{{ p.PK_Egresado }}</td>
+              <td><button type="button" routerLink="/capacitacionform/{{ p.id }}" routerLinkActive="active" class="btn btn-outline-info">Edit</button></td>
+              <td><button type="button" (click)="delete(p.id)" class="btn btn-danger">Delete</button></td>
+            </tr>
+    </tbody>    
+  </table> 

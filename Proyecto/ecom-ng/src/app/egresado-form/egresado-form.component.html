@@ -1,0 +1,22 @@
+<form [formGroup]="egresadoForm" (ngSubmit)="save()">
+
+        <fieldset>
+                <div class="form-group">
+                        <label for="exampleInputPassword1">id</label>
+                        <input type="text" formControlName="id" name="id" id="id" class="form-control" placeholder="ejemplo: 1" required>
+                </div>
+                <div class="form-group">
+                        <label for="exampleInputPassword1">fecha_egreso</label>
+                        <input type="date" formControlName="fecha_egreso" name="fecha_egreso" id="fecha_egreso" class="form-control"  required>
+                </div>
+                <div class="form-group">
+                        <label for="exampleInputPassword1">fecha_ingreso</label>
+                        <input type="date" formControlName="fecha_ingreso" name="fecha_ingreso" id="fecha_ingreso" class="form-control"  required>
+                </div>
+        </fieldset>
+        <div class="save1">
+                <button type="submit" [disabled]="!egresadoForm.valid" class="btn btn-outline-primary">guardar</button>
+        </div>
+    
+        <!--<p>{{ egresadoForm.value | json }}</p>-->
+    </form>

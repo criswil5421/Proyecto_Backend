@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+	background-color: black !important;
+}
+header{ 
+	padding-top: 2%;
+}
+.container{
+    margin-top: 2.5% ;
+	background-color: #f3f3f3;
+	border-radius: 20px 20px 20px 20px;
+	box-shadow: 0px 0px 25px #33E6FF ;
+	padding: 5%;
+
+}
+
+
+
+/*@media (min-width: 0px) and (max-width:600px){
+	.cuerpo{
+		display: none;
+		
+	}
+	body{
+		width: 100%;
+	}
+}
+
+@media (min-width: 601px) and (max-width:991px){
+	.cuerpo{
+		display: none;
+	}
+	body{
+		width: 100%;
+	}
+
+}*/

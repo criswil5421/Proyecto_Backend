@@ -1,0 +1,23 @@
+
+      <nav class="nuevae"> 
+          <button id="botone" type="button" routerLink="/egresadoform" class="btn btn-info">NUEVO EGRESADO</button>
+      </nav>  
+      <table class="table table-hover" *ngFor="let e of list">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">FECHA EGRESO</th>
+            <th scope="col">FECHA INGRESO</th>
+          </tr>
+          
+        </thead>
+        <tbody>
+              <tr class="table">
+                  <th scope="row">{{ e.id }}</th>
+                  <td>{{ e.fecha_egreso }}</td>
+                  <td>{{ e.fecha_ingreso }}</td>
+                  <td> <button type="button" routerLink="/egresadoform/{{ e.id }}" routerLinkActive="active" class="btn btn-outline-info">Edit</button> </td> 
+                  <td><button type="button" (click)="delete(e.id)" class="btn btn-danger">Delete</button></td>
+                </tr>
+        </tbody>    
+      </table> 

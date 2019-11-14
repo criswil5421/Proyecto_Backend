@@ -1,0 +1,52 @@
+
+<form [formGroup]="capacitacionForm" (ngSubmit)="save()">
+
+    <fieldset>
+            
+            <div class="form-group">
+                    <label for="exampleInputPassword1">id</label>
+                    <input type="text" formControlName="id" name="id" id="id" class="form-control" placeholder="ejemplo: 1" required>
+            </div>
+            <div class="form-group">
+                    <label for="exampleInputPassword1">costo</label>
+                    <input type="text" formControlName="costo" name="costo" id="costo" class="form-control" placeholder="ejemplo: 60.00" required>
+            </div>
+            <div class="form-group">
+                    <label for="exampleInputPassword1">entidad</label>
+                    <input type="text" formControlName="entidad" name="entidad" id="entidad" class="form-control" placeholder="ejemplo: empresa" required>
+            </div>
+            <div class="form-group">
+                    <label for="exampleInputPassword1">fecha</label>
+                    <input type="date" formControlName="fecha" name="fecha" id="fecha" class="form-control" required>
+            </div>
+            <div class="form-group">
+                        <label for="exampleInputPassword1">horas y credito</label>
+                        <input type="text" formControlName="horas_y_credito" name="horas_y_credito" id="horas_y_credito" class="form-control" placeholder="ejemplo: 4  -  4" required>
+            </div>
+            <div class="form-group">
+                    <label for="exampleInputPassword1">lugar</label>
+                    <input type="text" formControlName="lugar" name="lugar" id="lugar" class="form-control" placeholder="ejemplo: Arequipa" required>
+            </div>
+            <div class="form-group">
+                    <label for="exampleInputPassword1">tipo_de_evento</label>
+                    <input type="text" formControlName="tipo_de_evento" name="tipo_de_evento" id="tipo_de_evento" class="form-control" placeholder="ejemplo: Capacitacion" required>
+            </div>
+            
+            <div class="form-group">
+                    <label for="exampleInputPassword1">egresadoID</label>
+                    <input type="text" formControlName="egresadoID" name="egresadoID" id="egresadoID" class="form-control" placeholder="ejemplo: 1" required>
+            </div>
+            <div class="form-group">
+                    <label for="exampleInputPassword1">PK_Egresado</label>
+                    <input type="text" formControlName="PK_Egresado" name="PK_Egresado" id="PK_Egresado" class="form-control" placeholder="ejemplo: 1" required>
+            </div>
+    </fieldset>
+    <div class="save">
+        <button type="submit" [disabled]="!capacitacionForm.valid" class="btn btn-outline-primary">guardar</button>
+    </div>
+    
+
+    <!--<p>{{ capacitacionForm.value | json }}</p>-->
+</form>
+
+
