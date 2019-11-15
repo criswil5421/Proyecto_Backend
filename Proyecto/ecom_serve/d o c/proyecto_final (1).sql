@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-11-2019 a las 17:21:04
+-- Tiempo de generación: 15-11-2019 a las 17:29:51
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -55,13 +55,20 @@ INSERT INTO `clientes` (`id`, `nombre`, `apellido`, `telefono`, `direccion`) VAL
 --
 
 CREATE TABLE `comentarios` (
-  `Comentarios_Id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
+  `id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
   `Comentario_Fecha` date DEFAULT NULL COMMENT 'se registrara la fecha donde se mando el comentario',
   `Comentario_Estado` varchar(2) DEFAULT NULL COMMENT 'si: si esque a sido atendido, no: si aun no a sido atendido',
   `Comentario_Tipo` varchar(50) DEFAULT NULL COMMENT 'que tipo de comentario es ejem: felicitacion',
   `Comentario_Descripcion` varchar(400) DEFAULT NULL COMMENT 'sugerencia de la persona',
   `Persona_Id` int(11) DEFAULT NULL COMMENT 'el id sera unico y correlativo'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `comentarios`
+--
+
+INSERT INTO `comentarios` (`id`, `Comentario_Fecha`, `Comentario_Estado`, `Comentario_Tipo`, `Comentario_Descripcion`, `Persona_Id`) VALUES
+(1, '2019-11-15', 'no', 'RECLAMO', 'la velocidad de la pagina esta muy lenta', 1);
 
 -- --------------------------------------------------------
 
@@ -70,7 +77,7 @@ CREATE TABLE `comentarios` (
 --
 
 CREATE TABLE `curso` (
-  `Curso_Id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
+  `id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
   `Curso_Nombre` varchar(50) NOT NULL,
   `Curso_Tipo` varchar(100) DEFAULT NULL COMMENT 'el tipo del curso que hara',
   `Curso_Lugar` varchar(100) DEFAULT NULL COMMENT 'lugar donde se realizo el curso',
@@ -79,6 +86,13 @@ CREATE TABLE `curso` (
   `Persona_Id` int(11) DEFAULT NULL COMMENT 'el id sera unico y correlativo'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `curso`
+--
+
+INSERT INTO `curso` (`id`, `Curso_Nombre`, `Curso_Tipo`, `Curso_Lugar`, `Curso_Modalidad`, `Curso_Fecha`, `Persona_Id`) VALUES
+(1, 'BASE DE DATOS', 'CAPACITACION', 'JULIACA', 'OIYENTE', '2018-10-28', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -86,14 +100,38 @@ CREATE TABLE `curso` (
 --
 
 CREATE TABLE `egresado` (
-  `Egresado_Id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
-  `Egresado_Anio_Egreso` date DEFAULT NULL COMMENT 'año enque el que termino la carrera',
-  `Egresado_Anio_Ingreso` date DEFAULT NULL COMMENT 'año en el que ingreso a estudiar la carrera',
+  `id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
+  `Egre_Fecha_Egreso` date DEFAULT NULL COMMENT 'año enque el que termino la carrera',
+  `Egre_Fecha_Ingreso` date DEFAULT NULL COMMENT 'año en el que ingreso a estudiar la carrera',
   `Egresado_Codigo_U` varchar(15) DEFAULT NULL COMMENT 'el codigo de estudiante que tiene la persona',
-  `Egresado_Lugar_Egre` varchar(100) DEFAULT NULL COMMENT 'el lugar donde ah egresado la persona',
+  `Egresado_Filial` varchar(100) DEFAULT NULL COMMENT 'el lugar donde ah egresado la persona',
   `Escuela_Profesional_Id` int(11) NOT NULL,
   `Persona_Id` int(11) DEFAULT NULL COMMENT 'el id sera unico y correlativo'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `egresado`
+--
+
+INSERT INTO `egresado` (`id`, `Egre_Fecha_Egreso`, `Egre_Fecha_Ingreso`, `Egresado_Codigo_U`, `Egresado_Filial`, `Escuela_Profesional_Id`, `Persona_Id`) VALUES
+(1, '2018-11-15', '2013-11-15', '201811294', 'JULIACA', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `egresadodatos`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `egresadodatos` (
+`Egresado_Codigo_U` varchar(15)
+,`Persona_Ap_Paterno` varchar(50)
+,`Persona_AP_Materno` varchar(50)
+,`Persona_Nombre` varchar(50)
+,`Per_Nro_Documento` varchar(10)
+,`Persona_Celular` varchar(15)
+,`Egre_Fecha_Egreso` date
+,`Escuela_Profesional_Id` int(11)
+);
 
 -- --------------------------------------------------------
 
@@ -102,11 +140,19 @@ CREATE TABLE `egresado` (
 --
 
 CREATE TABLE `empresa` (
-  `Empresa_Id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
+  `id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
   `Empresa_Nombre` varchar(20) DEFAULT NULL COMMENT 'nombre de la empresa',
   `Empresa_Rubro` varchar(100) DEFAULT NULL COMMENT 'a que se dedica la empresa',
   `Empresa_Ubicacion` varchar(20) DEFAULT NULL COMMENT 'donde esta ubicada la empresa'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `empresa`
+--
+
+INSERT INTO `empresa` (`id`, `Empresa_Nombre`, `Empresa_Rubro`, `Empresa_Ubicacion`) VALUES
+(1, 'JICAR', 'PANADERIA', 'PUNO'),
+(2, 'RUBY', 'TRUCHERIA', 'JULIACA');
 
 -- --------------------------------------------------------
 
@@ -115,11 +161,18 @@ CREATE TABLE `empresa` (
 --
 
 CREATE TABLE `escuela_profesional` (
-  `Escuela_Profesional_Id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
+  `id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
   `Escuela_Profesional_Nombre` varchar(30) DEFAULT NULL COMMENT 'nombre de la escuela profesional',
   `Escuela_Profecional_Acre` varchar(1) DEFAULT NULL COMMENT 'S = esta acreditada\r\nN = no esta acreditada',
   `Facultad_Id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `escuela_profesional`
+--
+
+INSERT INTO `escuela_profesional` (`id`, `Escuela_Profesional_Nombre`, `Escuela_Profecional_Acre`, `Facultad_Id`) VALUES
+(1, 'SISTEMAS', 'S', 1);
 
 -- --------------------------------------------------------
 
@@ -128,13 +181,20 @@ CREATE TABLE `escuela_profesional` (
 --
 
 CREATE TABLE `experiencia_laboral` (
-  `Exper_ID` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
+  `id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
   `Exper_Fecha_Inicio` date DEFAULT NULL COMMENT 'fecha enque comenzo el trabajo',
   `Exper_Fecha_Fin` date DEFAULT NULL COMMENT 'fecha que termino el trabajo',
   `Empresa_Id` int(11) NOT NULL,
   `Exper_Funcion` varchar(50) NOT NULL,
   `Persona_Id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `experiencia_laboral`
+--
+
+INSERT INTO `experiencia_laboral` (`id`, `Exper_Fecha_Inicio`, `Exper_Fecha_Fin`, `Empresa_Id`, `Exper_Funcion`, `Persona_Id`) VALUES
+(2, '2017-10-12', '2019-11-07', 1, 'VENDEDOR', 1);
 
 -- --------------------------------------------------------
 
@@ -143,9 +203,16 @@ CREATE TABLE `experiencia_laboral` (
 --
 
 CREATE TABLE `facultad` (
-  `Facultad_Id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
+  `id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
   `Facultad_Nombre` varchar(20) DEFAULT NULL COMMENT 'el nombre de la facultad'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `facultad`
+--
+
+INSERT INTO `facultad` (`id`, `Facultad_Nombre`) VALUES
+(1, 'FIA');
 
 -- --------------------------------------------------------
 
@@ -154,7 +221,7 @@ CREATE TABLE `facultad` (
 --
 
 CREATE TABLE `historial` (
-  `Historial_Id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
+  `id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
   `Historial_Fecha` date DEFAULT NULL COMMENT 'fecha de registro del click',
   `Historial_Hora` time DEFAULT NULL COMMENT 'hora donde se hace el click',
   `Historial_Link` varchar(100) DEFAULT NULL COMMENT 'el link donde se hizo click',
@@ -164,11 +231,32 @@ CREATE TABLE `historial` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_09_12_153059_create_proveedors_table', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `oferta_laboral`
 --
 
 CREATE TABLE `oferta_laboral` (
-  `Oferta_Id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
+  `id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
   `Oferta_Tipo` varchar(50) DEFAULT NULL COMMENT 'que tipo de trabajo registra',
   `Oferta_Descripcion_Re` varchar(100) DEFAULT NULL COMMENT 'describe los requisitos o perfil del trabajor',
   `Oferta_Descripcion` varchar(200) DEFAULT NULL COMMENT 'que funcion se va cumplir en el trabajo',
@@ -178,11 +266,23 @@ CREATE TABLE `oferta_laboral` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `perfeccionamiento_profesional`
 --
 
 CREATE TABLE `perfeccionamiento_profesional` (
-  `Perfeccion_Id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
+  `id` int(11) NOT NULL COMMENT 'el id sera unico y correlativo',
   `Perfec_Nombre_U` varchar(20) DEFAULT NULL COMMENT 'nombre de la universidad donde estudio',
   `Perfec_Grado_actual` varchar(20) DEFAULT NULL COMMENT 'grado actual donde estudio',
   `Perfec_Fecha_Ini` date DEFAULT NULL COMMENT 'fecha en la que se inicio a estudiar',
@@ -226,7 +326,19 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`id`, `Persona_Tipo_Doc`, `Persona_Nombre`, `Persona_Celular`, `Per_Nro_Documento`, `Persona_Telefono`, `Persona_Contraseña`, `Persona_Usuario`, `Persona_Correo`, `Per_Fech_Nac`, `Persona_Sexo`, `Persona_Domicilio_Actual`, `Persona_Pais`, `Persona_Distrito`, `Persona_Edad`, `Persona_Departamento`, `Persona_Provincia`, `Persona_Ap_Paterno`, `Persona_Estado_em`, `Persona_Ap_Materno`, `Rango_Id`) VALUES
-(1, 'DNI', 'JUAN', '955112643', '45842631', '4564681213', 'PAQUITO123', 'JUAN', 'juan.´paco@upeu.edu.pe', '0000-00-00', 'MASCULINO', 'JULIACA', 'PERU', 'SAN ROMAN', '18', 'PUNO', 'JULIACA', 'PACO', 'EMPLEADO', 'GUTIERREZ', 1);
+(1, 'DNI', 'JUAN', '955112643', '45842631', '4564681213', 'PAQUITO123', 'JUAN', 'juan.paco@upeu.edu.pe', '2018-11-15', 'MASCULINO', 'JULIACA', 'PERU', 'SAN ROMAN', '18', 'PUNO', 'JULIACA', 'PACO', 'EMPLEADO', 'GUTIERREZ', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proveedors`
+--
+
+CREATE TABLE `proveedors` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -254,12 +366,38 @@ INSERT INTO `rango` (`id`, `Rango_Nombre`) VALUES
 --
 
 CREATE TABLE `respuesta_com` (
-  `Respuesta_Id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `Respuesta_Fecha_Ate` date DEFAULT NULL COMMENT 'comentario fecha de atencion del comentario',
   `Respuesta_Descrpcion` varchar(400) DEFAULT NULL COMMENT 'descripcion que hara el administrador',
   `Comentarios_Id` int(11) DEFAULT NULL COMMENT 'el id sera unico y correlativo',
   `Persona_Id` int(11) DEFAULT NULL COMMENT 'el id sera unico y correlativo'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `egresadodatos`
+--
+DROP TABLE IF EXISTS `egresadodatos`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `egresadodatos`  AS  select `b`.`Egresado_Codigo_U` AS `Egresado_Codigo_U`,`a`.`Persona_Ap_Paterno` AS `Persona_Ap_Paterno`,`a`.`Persona_Ap_Materno` AS `Persona_AP_Materno`,`a`.`Persona_Nombre` AS `Persona_Nombre`,`a`.`Per_Nro_Documento` AS `Per_Nro_Documento`,`a`.`Persona_Celular` AS `Persona_Celular`,`b`.`Egre_Fecha_Egreso` AS `Egre_Fecha_Egreso`,`b`.`Escuela_Profesional_Id` AS `Escuela_Profesional_Id` from (`persona` `a` join `egresado` `b`) ;
 
 --
 -- Índices para tablas volcadas
@@ -275,21 +413,21 @@ ALTER TABLE `clientes`
 -- Indices de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  ADD PRIMARY KEY (`Comentarios_Id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `persona_comentarios_fk` (`Persona_Id`);
 
 --
 -- Indices de la tabla `curso`
 --
 ALTER TABLE `curso`
-  ADD PRIMARY KEY (`Curso_Id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `persona_ep_especialidad_fk` (`Persona_Id`);
 
 --
 -- Indices de la tabla `egresado`
 --
 ALTER TABLE `egresado`
-  ADD PRIMARY KEY (`Egresado_Id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `escuela_profesional_egresado_fk` (`Escuela_Profesional_Id`),
   ADD KEY `persona_egresado_fk` (`Persona_Id`);
 
@@ -297,20 +435,20 @@ ALTER TABLE `egresado`
 -- Indices de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  ADD PRIMARY KEY (`Empresa_Id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `escuela_profesional`
 --
 ALTER TABLE `escuela_profesional`
-  ADD PRIMARY KEY (`Escuela_Profesional_Id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `facultad_escuela_profesional_fk` (`Facultad_Id`);
 
 --
 -- Indices de la tabla `experiencia_laboral`
 --
 ALTER TABLE `experiencia_laboral`
-  ADD PRIMARY KEY (`Exper_ID`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `empresa_experiencia_laboral_fk` (`Empresa_Id`),
   ADD KEY `persona_experiencia_laboral_fk` (`Persona_Id`);
 
@@ -318,27 +456,39 @@ ALTER TABLE `experiencia_laboral`
 -- Indices de la tabla `facultad`
 --
 ALTER TABLE `facultad`
-  ADD PRIMARY KEY (`Facultad_Id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `historial`
 --
 ALTER TABLE `historial`
-  ADD PRIMARY KEY (`Historial_Id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `persona_historial_fk` (`Persona_Id`);
+
+--
+-- Indices de la tabla `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `oferta_laboral`
 --
 ALTER TABLE `oferta_laboral`
-  ADD PRIMARY KEY (`Oferta_Id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `persona_oferta_laboral_fk` (`Persona_Id`);
+
+--
+-- Indices de la tabla `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
 
 --
 -- Indices de la tabla `perfeccionamiento_profesional`
 --
 ALTER TABLE `perfeccionamiento_profesional`
-  ADD PRIMARY KEY (`Perfeccion_Id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `persona_perfeccionamiento_profesional_fk` (`Persona_Id`);
 
 --
@@ -347,6 +497,12 @@ ALTER TABLE `perfeccionamiento_profesional`
 ALTER TABLE `persona`
   ADD PRIMARY KEY (`id`),
   ADD KEY `rango_persona_fk` (`Rango_Id`);
+
+--
+-- Indices de la tabla `proveedors`
+--
+ALTER TABLE `proveedors`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `rango`
@@ -358,9 +514,16 @@ ALTER TABLE `rango`
 -- Indices de la tabla `respuesta_com`
 --
 ALTER TABLE `respuesta_com`
-  ADD PRIMARY KEY (`Respuesta_Id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `persona_respuesta_com_fk` (`Persona_Id`),
   ADD KEY `comentarios_respuesta_com_fk` (`Comentarios_Id`);
+
+--
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -376,67 +539,79 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `Comentarios_Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `Curso_Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `egresado`
 --
 ALTER TABLE `egresado`
-  MODIFY `Egresado_Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `Empresa_Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `escuela_profesional`
 --
 ALTER TABLE `escuela_profesional`
-  MODIFY `Escuela_Profesional_Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `experiencia_laboral`
 --
 ALTER TABLE `experiencia_laboral`
-  MODIFY `Exper_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `facultad`
 --
 ALTER TABLE `facultad`
-  MODIFY `Facultad_Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `historial`
 --
 ALTER TABLE `historial`
-  MODIFY `Historial_Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo';
+
+--
+-- AUTO_INCREMENT de la tabla `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `oferta_laboral`
 --
 ALTER TABLE `oferta_laboral`
-  MODIFY `Oferta_Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo';
 
 --
 -- AUTO_INCREMENT de la tabla `perfeccionamiento_profesional`
 --
 ALTER TABLE `perfeccionamiento_profesional`
-  MODIFY `Perfeccion_Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo';
 
 --
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'el id sera unico y correlativo', AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `proveedors`
+--
+ALTER TABLE `proveedors`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `rango`
@@ -448,7 +623,13 @@ ALTER TABLE `rango`
 -- AUTO_INCREMENT de la tabla `respuesta_com`
 --
 ALTER TABLE `respuesta_com`
-  MODIFY `Respuesta_Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -470,20 +651,20 @@ ALTER TABLE `curso`
 -- Filtros para la tabla `egresado`
 --
 ALTER TABLE `egresado`
-  ADD CONSTRAINT `escuela_profesional_egresado_fk` FOREIGN KEY (`Escuela_Profesional_Id`) REFERENCES `escuela_profesional` (`Escuela_Profesional_Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `escuela_profesional_egresado_fk` FOREIGN KEY (`Escuela_Profesional_Id`) REFERENCES `escuela_profesional` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `persona_egresado_fk` FOREIGN KEY (`Persona_Id`) REFERENCES `persona` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `escuela_profesional`
 --
 ALTER TABLE `escuela_profesional`
-  ADD CONSTRAINT `facultad_escuela_profesional_fk` FOREIGN KEY (`Facultad_Id`) REFERENCES `facultad` (`Facultad_Id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `facultad_escuela_profesional_fk` FOREIGN KEY (`Facultad_Id`) REFERENCES `facultad` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `experiencia_laboral`
 --
 ALTER TABLE `experiencia_laboral`
-  ADD CONSTRAINT `empresa_experiencia_laboral_fk` FOREIGN KEY (`Empresa_Id`) REFERENCES `empresa` (`Empresa_Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `empresa_experiencia_laboral_fk` FOREIGN KEY (`Empresa_Id`) REFERENCES `empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `persona_experiencia_laboral_fk` FOREIGN KEY (`Persona_Id`) REFERENCES `persona` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -514,7 +695,7 @@ ALTER TABLE `persona`
 -- Filtros para la tabla `respuesta_com`
 --
 ALTER TABLE `respuesta_com`
-  ADD CONSTRAINT `comentarios_respuesta_com_fk` FOREIGN KEY (`Comentarios_Id`) REFERENCES `comentarios` (`Comentarios_Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `comentarios_respuesta_com_fk` FOREIGN KEY (`Comentarios_Id`) REFERENCES `comentarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `persona_respuesta_com_fk` FOREIGN KEY (`Persona_Id`) REFERENCES `persona` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
