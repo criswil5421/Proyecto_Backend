@@ -60,11 +60,11 @@ Route::put('escuela/{id}', 'escuelaController@update');
 Route::delete('escuela/{id}', 'escuelaController@destroy');
 
 
-Route::get('facultad', 'FacultadController@index');
-Route::get('facultad/{id}', 'facultadController@show');
-Route::post('facultad', 'facultadController@create');
-Route::put('facultad/{id}', 'facultadController@update');
-Route::delete('facultad/{id}', 'facultadController@destroy');
+Route::get('facultad', '@index');
+Route::get('facultad/{id}', 'FacultadController@show');
+Route::post('facultad', 'FacultadController@create');
+Route::put('facultad/{id}', 'FacultadController@update');
+Route::delete('facultad/{id}', 'FacultadController@destroy');
 
 
 Route::get('experiencia', 'ExperienciaController@index');
@@ -93,6 +93,13 @@ Route::get('historial/{id}', 'HistorialController@show');
 Route::post('historial', 'HistorialController@create');
 Route::put('historial/{id}', 'HistorialController@update');
 Route::delete('historial/{id}', 'HistorialController@destroy');
+
+
+Route::get('egresadodatos', 'EgresaDodatosController@index');
+Route::get('egresadodatos/{id}', 'EgresaDodatosController@show');
+Route::post('egresadodatos', 'EgresaDodatosController@create');
+Route::put('egresadodatos/{id}', 'EgresaDodatosController@update');
+Route::delete('egresadodatos/{id}', 'EgresaDodatosController@destroy');
 
 
 Route::get('respuesta', 'RespuestaController@index');

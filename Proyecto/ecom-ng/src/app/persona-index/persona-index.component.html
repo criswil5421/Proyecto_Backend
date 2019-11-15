@@ -1,0 +1,13 @@
+<p>persona-index works!</p>
+
+
+<div *ngFor="let p of list">
+
+    <span>{{ p.Persona_Nombre }}</span>
+    <span>{{ p.apellido }}</span>
+
+
+    <!--<span><a routerLink="/clienteform/{{ d.id }}" routerLinkActive="active">Edit</a></span>-->
+    <span><button (click)="delete(d.id)">Delete</button></span>
+</div>
+

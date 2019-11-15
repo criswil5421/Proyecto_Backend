@@ -2,3 +2,8 @@
 .nueva{
     text-align:center;
 }
+
+
+.navbar navbar-expand-lg navbar-dark bg-primary{
+    background-color: #800000;
+}
