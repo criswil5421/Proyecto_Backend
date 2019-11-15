@@ -11,8 +11,8 @@ class FacultadController extends Controller
     public function index()
     {
 
-        $clientes = Facultad::all(); 
-        return response()->json($clientes);
+        $facultad = Facultad::all(); 
+        return response()->json($facultad);
     }
 
     
@@ -27,9 +27,9 @@ class FacultadController extends Controller
     public function show($id)
     {
        
-        $cliente= Facultad::findOrFail($id);
+        $facultad= Facultad::findOrFail($id);
         
-        return response()->json($cliente);
+        return response()->json($facultad);
     }
 
 

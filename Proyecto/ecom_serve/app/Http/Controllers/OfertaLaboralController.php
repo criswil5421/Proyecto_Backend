@@ -11,8 +11,8 @@ class OfertaLaboralController extends Controller
     public function index()
     {
 
-        $clientes = Oferta_Laboral::all(); 
-        return response()->json($clientes);
+        $oferta_laboral = Oferta_Laboral::all(); 
+        return response()->json($oferta_laboral);
     }
 
     
@@ -27,9 +27,9 @@ class OfertaLaboralController extends Controller
     public function show($id)
     {
        
-        $cliente= Oferta_Laboral::findOrFail($id);
+        $oferta_laboral= Oferta_Laboral::findOrFail($id);
         
-        return response()->json($cliente);
+        return response()->json($oferta_laboral);
     }
 
 

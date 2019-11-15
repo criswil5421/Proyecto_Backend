@@ -11,8 +11,8 @@ class EscuelaController extends Controller
     public function index()
     {
 
-        $clientes = Escuela_Profesional::all(); 
-        return response()->json($clientes);
+        $escuela_profesional = Escuela_Profesional::all(); 
+        return response()->json($escuela_profesional);
     }
 
     
@@ -27,9 +27,9 @@ class EscuelaController extends Controller
     public function show($id)
     {
        
-        $cliente= Escuela_Profesional::findOrFail($id);
+        $escuela_profesional= Escuela_Profesional::findOrFail($id);
         
-        return response()->json($cliente);
+        return response()->json($escuela_profesional);
     }
 
 

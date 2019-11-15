@@ -11,8 +11,8 @@ class ExperienciaController extends Controller
     public function index()
     {
 
-        $clientes = Experiencia_Laboral::all(); 
-        return response()->json($clientes);
+        $experiencia_laboral = Experiencia_Laboral::all(); 
+        return response()->json($experiencia_laboral);
     }
 
     
@@ -27,9 +27,9 @@ class ExperienciaController extends Controller
     public function show($id)
     {
        
-        $cliente= Experiencia_Laboral::findOrFail($id);
+        $experiencia_laboral= Experiencia_Laboral::findOrFail($id);
         
-        return response()->json($cliente);
+        return response()->json($experiencia_laboral);
     }
 
 

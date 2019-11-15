@@ -11,8 +11,8 @@ class HistorialController extends Controller
     public function index()
     {
 
-        $clientes = Historial::all(); 
-        return response()->json($clientes);
+        $historial = Historial::all(); 
+        return response()->json($historial);
     }
 
     
@@ -27,9 +27,9 @@ class HistorialController extends Controller
     public function show($id)
     {
        
-        $cliente= Historial::findOrFail($id);
+        $historial= Historial::findOrFail($id);
         
-        return response()->json($cliente);
+        return response()->json($historial);
     }
 
 

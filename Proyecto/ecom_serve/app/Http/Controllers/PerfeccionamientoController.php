@@ -11,8 +11,8 @@ class PerfeccionamientoController extends Controller
     public function index()
     {
 
-        $clientes = Perfeccionamiento_Profesional::all(); 
-        return response()->json($clientes);
+        $perfeccionamiento_profesional = Perfeccionamiento_Profesional::all(); 
+        return response()->json($perfeccionamiento_profesional);
     }
 
     
@@ -27,9 +27,9 @@ class PerfeccionamientoController extends Controller
     public function show($id)
     {
        
-        $cliente= Perfeccionamiento_Profesional::findOrFail($id);
+        $perfeccionamiento_profesional= Perfeccionamiento_Profesional::findOrFail($id);
         
-        return response()->json($cliente);
+        return response()->json($perfeccionamiento_profesional);
     }
 
 

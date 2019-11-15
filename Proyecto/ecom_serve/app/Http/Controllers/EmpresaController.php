@@ -11,15 +11,15 @@ class EmpresaController extends Controller
     public function index()
     {
 
-        $clientes = Cliente::all(); 
-        return response()->json($clientes);
+        $empresa = Empresa::all(); 
+        return response()->json($empresa);
     }
 
     
     public function create(Request $request)
     {
         
-        Cliente::create($request->all());
+        Empresa::create($request->all());
         return response()->json(['success' => true]);
     }
 
@@ -27,16 +27,16 @@ class EmpresaController extends Controller
     public function show($id)
     {
        
-        $cliente= Cliente::findOrFail($id);
+        $empresa= Empresa::findOrFail($id);
         
-        return response()->json($cliente);
+        return response()->json($empresa);
     }
 
 
     public function update(Request $request, $id)
     {
         
-            Cliente::findOrFail($id)->update($request->all());
+            Empresa::findOrFail($id)->update($request->all());
             return response()->json(['success' => true]);
          
     }
@@ -44,7 +44,7 @@ class EmpresaController extends Controller
     
     public function destroy($id)
     {
-        Cliente::findOrFail($id)->delete();
+        Empresa::findOrFail($id)->delete();
         return response()->json(['success' => true]);
     }
 }

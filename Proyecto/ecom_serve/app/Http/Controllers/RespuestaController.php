@@ -12,8 +12,8 @@ class RespuestaController extends Controller
     public function index()
     {
 
-        $clientes = Respuesta::all(); 
-        return response()->json($clientes);
+        $respuesta_com = Respuesta::all(); 
+        return response()->json($respuesta_com);
     }
 
     
@@ -28,9 +28,9 @@ class RespuestaController extends Controller
     public function show($id)
     {
        
-        $cliente= Respuesta::findOrFail($id);
+        $respuesta_com= Respuesta::findOrFail($id);
         
-        return response()->json($cliente);
+        return response()->json($respuesta_com);
     }
 
 
