@@ -1,0 +1,27 @@
+
+      <nav class="nuevae"> 
+        <button id="botone" type="button" routerLink="/egresadoform" class="btn btn-info">NUEVO EGRESADO</button>
+    </nav>  
+    <table class="table table-hover" *ngFor="let f of list">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre de la Empresa</th>
+          <th scope="col">Descripcion de la Empresa</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Direccion</th>
+        </tr>
+        
+      </thead>
+      <tbody>
+            <tr class="table">
+                <th scope="row">{{ f.id }}</th>
+                <td>{{ f.nombreempresa }}</td>
+                <td>{{ f.descripcion }}</td>
+                <td>{{ f.telefono }}</td>
+                <td>{{ f.direccion }}</td>
+                <td> <button type="button" routerLink="/oferta_laboralFrom/{{ f.id }}" routerLinkActive="active" class="btn btn-outline-info">Edit</button> </td> 
+                <td><button type="button" (click)="delete(f.id)" class="btn btn-danger">Delete</button></td>
+              </tr>
+      </tbody>    
+    </table> 

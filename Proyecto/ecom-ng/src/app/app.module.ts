@@ -19,6 +19,7 @@ import { EgresadoFormComponent } from './egresado-form/egresado-form.component';
 import { PersonaIndexComponent } from './persona-index/persona-index.component';
 import { EgresadoDatosIndexComponent } from './egresado-datos-index/egresado-datos-index.component';
 import { OfertaLaboralComponent } from './oferta-laboral/oferta-laboral.component';
+import { OfertaindexComponent } from './ofertaindex/ofertaindex.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -47,6 +48,16 @@ const appRoutes: Routes = [
   { path: 'personaform',  component: PersonaIndexComponent },
   { path: 'personaform/:id',  component: PersonaIndexComponent },
 
+  { path: 'oferta_laboral',  component: OfertaLaboralComponent },
+  { path: 'oferta_laboral',  component: OfertaLaboralComponent },
+  { path: 'oferta_laboral/:id',  component: OfertaLaboralComponent },
+
+  { path: 'ofertaindex',  component: OfertaindexComponent },
+  { path: 'ofertaindex',  component: OfertaindexComponent },
+  { path: 'ofertaindex/:id',  component: OfertaindexComponent },
+
+
+
   { path: '**', component: PageNotFoundComponent },
 
 ];
@@ -66,7 +77,8 @@ const appRoutes: Routes = [
     EgresadoFormComponent,
     PersonaIndexComponent,
     EgresadoDatosIndexComponent,
-    OfertaLaboralComponent
+    OfertaLaboralComponent,
+    OfertaindexComponent
   ],
   imports: [
     BrowserModule,

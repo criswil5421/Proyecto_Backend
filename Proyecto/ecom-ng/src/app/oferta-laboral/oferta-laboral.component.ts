@@ -22,7 +22,7 @@ export class OfertaLaboralComponent implements OnInit {
 
   ngOnInit() {
     this.oferta_laboralForm = this.formBuild.group({
-      id: ['', [Validators.required]],
+      id: [''],
       nombreempresa: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
       telefono: ['', [Validators.required]],
@@ -32,20 +32,20 @@ export class OfertaLaboralComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
     if (id != null) {
       this.OfertaLaboralService.getById(id).subscribe(response => {
-        this.OfertaLaboralService.setValue(response);
+        this.oferta_laboralForm.setValue(response);
         console.log(response);
       });
     }
   }
   save() {
-    console.log(this.OfertaLaboralService.value);
+    console.log(this.oferta_laboralForm.value);
     let id = this.route.snapshot.paramMap.get('id');
     if (id != null) {
-      this.OfertaLaboralService.update(id, this.OfertaLaboralService.value).subscribe(response => {
+      this.OfertaLaboralService.update(id, this.oferta_laboralForm.value).subscribe(response => {
         console.log("UPDATE ",response);
       });
     }else{
-      this.OfertaLaboralService.add(this.OfertaLaboralService.value).subscribe(response => {
+      this.OfertaLaboralService.add(this.oferta_laboralForm.value).subscribe(response => {
         console.log("ADD ",response);
       });
     }

@@ -1,5 +1,5 @@
 <h1>Agregar Oferta Laboral </h1>
-<form [formGroup]="clienteForm" (ngSubmit)="save()">
+<form [formGroup]="oferta_laboralForm" (ngSubmit)="save()">
     <div [hidden]="false">
         <input type="text" formControlName="id" name="id" id="id" >
     </div>
@@ -23,5 +23,5 @@
         <input type="text" formControlName="direccion" name="direccion" id="direccion" required>
     </label>
     <br>
-    <button type="submit" [disabled]="!clienteForm.valid">Save</button>
+    <button type="submit" [disabled]="!oferta_laboralForm.valid">Save</button>
 </form>

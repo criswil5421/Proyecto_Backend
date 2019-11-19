@@ -15,9 +15,10 @@ class CreateOfertaLaboralTable extends Migration
     {
         Schema::create('oferta_laboral', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('tipo');
+            $table->string('nombreempresa');
             $table->string('descripcion');
-            $table->string('descripcionaea');
+            $table->string('telefono');
+            $table->string('direccion');
             $table->timestamps();
         });
     }
