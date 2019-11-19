@@ -46,8 +46,8 @@ Route::get('facultad/show/{id}',"FacultadController@show");
 Route::get('historial/index',"HistorialController@index");
 Route::get('historial/show/{id}',"HistorialController@show");
 
-Route::get('oferta/index',"OfertaLaboralController@index");
-Route::get('oferta/show/{id}',"OfertaLaboralController@show");
+Route::get('oferta_laboral/index',"OfertaLaboralController@index");
+Route::get('oferta_laboral/show/{id}',"OfertaLaboralController@show");
 
 Route::get('perfeccionamiento/index',"PerfeccionamientoController@index");
 Route::get('perfeccionamiento/show/{id}',"PerfeccionamientoController@show");

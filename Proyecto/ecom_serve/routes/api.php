@@ -109,11 +109,11 @@ Route::put('respuesta/{id}', 'RespuestaController@update');
 Route::delete('respuesta/{id}', 'RespuestaController@destroy');
 
 
-Route::get('oferta', 'OfertaLaboralController@index');
-Route::get('oferta/{id}', 'OfertaLaboralController@show');
-Route::post('oferta', 'OfertaLaboralController@create');
-Route::put('oferta/{id}', 'OfertaLaboralController@update');
-Route::delete('oferta/{id}', 'OfertaLaboralController@destroy');
+Route::get('oferta_laboral', 'OfertaLaboralController@index');
+Route::get('oferta_laboral/{id}', 'OfertaLaboralController@show');
+Route::post('oferta_laboral', 'OfertaLaboralController@create');
+Route::put('oferta_laboral/{id}', 'OfertaLaboralController@update');
+Route::delete('oferta_laboral/{id}', 'OfertaLaboralController@destroy');
 
 
 Route::get('perfeccionamiento', 'PerfeccionamientoController@index');
