@@ -95,11 +95,11 @@ Route::put('historial/{id}', 'HistorialController@update');
 Route::delete('historial/{id}', 'HistorialController@destroy');
 
 
-Route::get('egresadodatos', 'EgresaDodatosController@index');
-Route::get('egresadodatos/{id}', 'EgresaDodatosController@show');
-Route::post('egresadodatos', 'EgresaDodatosController@create');
-Route::put('egresadodatos/{id}', 'EgresaDodatosController@update');
-Route::delete('egresadodatos/{id}', 'EgresaDodatosController@destroy');
+Route::get('egresadodatos', 'EgresadoDatosController@index');
+Route::get('egresadodatos/{id}', 'EgresadoDatosController@show');
+Route::post('egresadodatos', 'EgresadoDatosController@create');
+Route::put('egresadodatos/{id}', 'EgresadoDatosController@update');
+Route::delete('egresadodatos/{id}', 'EgresadoDatosController@destroy');
 
 
 Route::get('respuesta', 'RespuestaController@index');

@@ -25,6 +25,10 @@ Route::get('cliente/show/{id}',"ClienteController@show");
 Route::get('egresado/index',"EgresadoController@index");
 Route::get('egresado/show/{id}',"EgresadoController@show");
 
+Route::get('egresadodatos/index',"EgresadoDatosController@index");
+Route::get('egresadodatos/show/{id}',"EgresadoDatosController@show");
+
+
 Route::get('comentario/index',"ComentarioController@index");
 Route::get('comentario/show/{id}',"ComentarioController@show");
 
