@@ -23,27 +23,27 @@ class RangoController extends Controller
     }
 
 
-    public function show($id)
+    public function show($rango_id)
     {
        
-        $rango= Rango::findOrFail($id);
+        $rango= Rango::findOrFail($rango_id);
         
         return response()->json($rango);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $rango_id)
     {
         
-            Rango::findOrFail($id)->update($request->all());
+            Rango::findOrFail($rango_id)->update($request->all());
             return response()->json(['success' => true]);
          
     }
 
     
-    public function destroy($id)
+    public function destroy($rango_id)
     {
-        Rango::findOrFail($id)->delete();
+        Rango::findOrFail($rango_id)->delete();
         return response()->json(['success' => true]);
     }
 }

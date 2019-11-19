@@ -24,27 +24,27 @@ class CursoController extends Controller
     }
 
 
-    public function show($id)
+    public function show($curso_id)
     {
        
-        $curso= Curso::findOrFail($id);
+        $curso= Curso::findOrFail($curso_id);
         
         return response()->json($curso);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $curso_id)
     {
         
-            Curso::findOrFail($id)->update($request->all());
+            Curso::findOrFail($curso_id)->update($request->all());
             return response()->json(['success' => true]);
          
     }
 
     
-    public function destroy($id)
+    public function destroy($curso_id)
     {
-        Curso::findOrFail($id)->delete();
+        Curso::findOrFail($curso_id)->delete();
         return response()->json(['success' => true]);
     }
 }

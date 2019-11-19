@@ -12,8 +12,8 @@ class EgresadoDatosController extends Controller
     public function index()
     {
         $egresa = DB::table('egresado')
-        ->join('persona' , 'persona.id' , 'egresado.Persona_Id')
-        ->join('escuela_profesional','escuela_profesional.id','egresado.escuela_profesional_Id')
+        ->join('persona' , 'persona.persona_id' , 'egresado.persona_id')
+        ->join('escuela_profesional','escuela_profesional.escuela_profesional_id','egresado.escuela_profesional_Id')
         ->select('egresado.Egresado_Codigo_U' , 'persona.Persona_Ap_Paterno' ,
          'persona.Persona_AP_Materno' , 'persona.Persona_Nombre' , 'persona.Per_Nro_Documento' , 
          'persona.Persona_Celular' , 'egresado.Egre_Fecha_Egreso' , 'escuela_profesional.Escuela_Profesional_Nombre')

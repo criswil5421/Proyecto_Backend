@@ -8,6 +8,7 @@ class Respuesta extends Model
 {
     //
     public $timestamps = false;
-    protected $guarded = ["id"];
+    protected $primaryKey = 'respuesta_id';
     protected $table ='Respuesta_Com';
+    protected $guarded = ["id"];
 }

@@ -8,6 +8,7 @@ class Oferta_Laboral extends Model
 {
     //
     public $timestamps = false;
-    protected $guarded = ["id"];
+    protected $primaryKey = 'oferta_id';
     protected $table ='oferta_laboral';
+    protected $guarded = ["id"];
 }

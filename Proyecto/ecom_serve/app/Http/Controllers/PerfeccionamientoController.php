@@ -24,7 +24,7 @@ class PerfeccionamientoController extends Controller
     }
 
 
-    public function show($id)
+    public function show($perfeccion_id)
     {
        
         $perfeccionamiento_profesional= Perfeccionamiento_Profesional::findOrFail($id);
@@ -33,18 +33,18 @@ class PerfeccionamientoController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $perfeccion_id)
     {
         
-            Perfeccionamiento_Profesional::findOrFail($id)->update($request->all());
+            Perfeccionamiento_Profesional::findOrFail($perfeccion_id)->update($request->all());
             return response()->json(['success' => true]);
          
     }
 
     
-    public function destroy($id)
+    public function destroy($perfeccion_id)
     {
-        Perfeccionamiento_Profesional::findOrFail($id)->delete();
+        Perfeccionamiento_Profesional::findOrFail($perfeccion_id)->delete();
         return response()->json(['success' => true]);
     }
 }

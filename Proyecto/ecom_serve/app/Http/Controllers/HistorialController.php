@@ -24,27 +24,27 @@ class HistorialController extends Controller
     }
 
 
-    public function show($id)
+    public function show($historial_id)
     {
        
-        $historial= Historial::findOrFail($id);
+        $historial= Historial::findOrFail($historial_id);
         
         return response()->json($historial);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $historial_id)
     {
         
-            Historial::findOrFail($id)->update($request->all());
+            Historial::findOrFail($historial_id)->update($request->all());
             return response()->json(['success' => true]);
          
     }
 
     
-    public function destroy($id)
+    public function destroy($historial_id)
     {
-        Historial::findOrFail($id)->delete();
+        Historial::findOrFail($historial_id)->delete();
         return response()->json(['success' => true]);
     }
 }

@@ -24,27 +24,27 @@ class OfertaLaboralController extends Controller
     }
 
 
-    public function show($id)
+    public function show($oferta_id)
     {
        
-        $oferta_laboral= Oferta_Laboral::findOrFail($id);
+        $oferta_laboral= Oferta_Laboral::findOrFail($oferta_id);
         
         return response()->json($oferta_laboral);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $oferta_id)
     {
         
-            Oferta_Laboral::findOrFail($id)->update($request->all());
+            Oferta_Laboral::findOrFail($oferta_id)->update($request->all());
             return response()->json(['success' => true]);
          
     }
 
     
-    public function destroy($id)
+    public function destroy($oferta_id)
     {
-        Oferta_Laboral::findOrFail($id)->delete();
+        Oferta_Laboral::findOrFail($oferta_id)->delete();
         return response()->json(['success' => true]);
     }
 }

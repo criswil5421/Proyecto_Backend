@@ -24,27 +24,27 @@ class FacultadController extends Controller
     }
 
 
-    public function show($id)
+    public function show($facultad_id)
     {
        
-        $facultad= Facultad::findOrFail($id);
+        $facultad= Facultad::findOrFail($facultad_id);
         
         return response()->json($facultad);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $facultad_id)
     {
         
-            Facultad::findOrFail($id)->update($request->all());
+            Facultad::findOrFail($facultad_id)->update($request->all());
             return response()->json(['success' => true]);
          
     }
 
     
-    public function destroy($id)
+    public function destroy($facultad_id)
     {
-        Facultad::findOrFail($id)->delete();
+        Facultad::findOrFail($facultad_id)->delete();
         return response()->json(['success' => true]);
     }
 }

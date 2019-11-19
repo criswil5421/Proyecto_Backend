@@ -31,16 +31,16 @@ class EgresadoController extends Controller
         return response()->json(['success' => true]);
     }
 
-    public function show($id)
+    public function show($egresado_id)
     {
-        $egresado= Egresado::findOrFail($id);
+        $egresado= Egresado::findOrFail($egresado_id);
         
         return response()->json($egresado);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $egresado_id)
     {
-        Egresado::findOrFail($id)->update($request->all());
+        Egresado::findOrFail($egresado_id)->update($request->all());
             return response()->json(['success' => true]);
     }
 
@@ -50,9 +50,9 @@ class EgresadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($egresado_id)
     {
-        Egresado::findOrFail($id)->delete();
+        Egresado::findOrFail($egresado_id)->delete();
         return response()->json(['success' => true]);
     }
 }

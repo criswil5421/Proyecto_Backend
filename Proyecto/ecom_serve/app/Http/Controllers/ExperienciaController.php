@@ -24,7 +24,7 @@ class ExperienciaController extends Controller
     }
 
 
-    public function show($id)
+    public function show($exper_id)
     {
        
         $experiencia_laboral= Experiencia_Laboral::findOrFail($id);
@@ -33,18 +33,18 @@ class ExperienciaController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $exper_id)
     {
         
-            Experiencia_Laboral::findOrFail($id)->update($request->all());
+            Experiencia_Laboral::findOrFail($exper_id)->update($request->all());
             return response()->json(['success' => true]);
          
     }
 
     
-    public function destroy($id)
+    public function destroy($exper_id)
     {
-        Experiencia_Laboral::findOrFail($id)->delete();
+        Experiencia_Laboral::findOrFail($exper_id)->delete();
         return response()->json(['success' => true]);
     }
 }

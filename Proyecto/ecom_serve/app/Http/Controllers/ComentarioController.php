@@ -24,27 +24,27 @@ class ComentarioController extends Controller
     }
 
 
-    public function show($id)
+    public function show($comentario_id)
     {
        
-        $comentario= Comentario::findOrFail($id);
+        $comentario= Comentario::findOrFail($comentario_id);
         
         return response()->json($comentario);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $comentario_id)
     {
         
-            Comentario::findOrFail($id)->update($request->all());
+            Comentario::findOrFail($comentario_id)->update($request->all());
             return response()->json(['success' => true]);
          
     }
 
     
-    public function destroy($id)
+    public function destroy($comentario_id)
     {
-        Comentario::findOrFail($id)->delete();
+        Comentario::findOrFail($comentario_id)->delete();
         return response()->json(['success' => true]);
     }
 }

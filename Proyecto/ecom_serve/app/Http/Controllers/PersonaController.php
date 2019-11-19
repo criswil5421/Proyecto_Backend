@@ -23,27 +23,27 @@ class PersonaController extends Controller
     }
 
 
-    public function show($id)
+    public function show($persona_id)
     {
        
-        $Persona= Persona::findOrFail($id);
+        $Persona= Persona::findOrFail($persona_id);
         
         return response()->json($Persona);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $persona_id)
     {
         
-            Persona::findOrFail($id)->update($request->all());
+            Persona::findOrFail($persona_id)->update($request->all());
             return response()->json(['success' => true]);
          
     }
-
+ 
     
-    public function destroy($id)
+    public function destroy($persona_id)
     {
-        Persona::findOrFail($id)->delete();
+        Persona::findOrFail($persona_id)->delete();
         return response()->json(['success' => true]);
     }
 }
