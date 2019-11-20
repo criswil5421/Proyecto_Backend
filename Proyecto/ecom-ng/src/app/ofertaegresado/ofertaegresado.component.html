@@ -1,0 +1,25 @@
+ <nav class="nuevae"> 
+        <button id="botone" type="button" routerLink="/oferta_laboral" class="btn btn-info">Añadir Oferta Laboral</button>
+</nav>  
+    <table class="table table-hover" *ngFor="let f of list">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre de la Empresa</th>
+          <th scope="col">Descripcion de la Empresa</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Direccion</th>
+        </tr>
+        
+      </thead>
+      <tbody>
+            <tr class="table">
+                <th scope="row">{{ f.id }}</th>
+                <td>{{ f.nombreempresa }}</td>
+                <td>{{ f.descripcion }}</td>
+                <td>{{ f.telefono }}</td>
+                <td>{{ f.direccion }}</td>
+                <td><button type="button"  class="btn btn-blue">Me Interesa</button></td>
+              </tr>
+      </tbody>    
+    </table> 

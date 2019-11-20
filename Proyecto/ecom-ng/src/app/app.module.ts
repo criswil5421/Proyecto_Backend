@@ -20,6 +20,7 @@ import { PersonaIndexComponent } from './persona-index/persona-index.component';
 import { EgresadoDatosIndexComponent } from './egresado-datos-index/egresado-datos-index.component';
 import { OfertaLaboralComponent } from './oferta-laboral/oferta-laboral.component';
 import { OfertaindexComponent } from './ofertaindex/ofertaindex.component';
+import { OfertaegresadoComponent } from './ofertaegresado/ofertaegresado.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -56,6 +57,10 @@ const appRoutes: Routes = [
   { path: 'ofertaindex',  component: OfertaindexComponent },
   { path: 'ofertaindex/:id',  component: OfertaindexComponent },
 
+  { path: 'ofertaegresado',  component: OfertaegresadoComponent },
+  { path: 'ofertaegresado',  component: OfertaegresadoComponent },
+  { path: 'ofertaegresado/:id',  component: OfertaegresadoComponent },
+
 
 
   { path: '**', component: PageNotFoundComponent },
@@ -78,7 +83,8 @@ const appRoutes: Routes = [
     PersonaIndexComponent,
     EgresadoDatosIndexComponent,
     OfertaLaboralComponent,
-    OfertaindexComponent
+    OfertaindexComponent,
+    OfertaegresadoComponent
   ],
   imports: [
     BrowserModule,

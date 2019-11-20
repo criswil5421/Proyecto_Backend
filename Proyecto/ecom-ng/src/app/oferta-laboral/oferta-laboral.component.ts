@@ -49,7 +49,7 @@ export class OfertaLaboralComponent implements OnInit {
         console.log("ADD ",response);
       });
     }
-    this.router.navigate(['/oferta_laboral']);
+    this.router.navigate(['/ofertaindex']);
   }
 
 }
