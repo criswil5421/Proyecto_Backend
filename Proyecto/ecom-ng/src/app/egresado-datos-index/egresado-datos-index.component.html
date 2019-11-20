@@ -1,8 +1,7 @@
 
     <input class = "form-control mr-sm-2" type = "text" placeholder = "Buscar">
     <button class = "btn btn-secundario my-2 my-sm-0" type = "submit"> <font style = "vertical-align: heredar;"> <font style = "vertical-align: heredar;"> Buscar </font> </font> </button>
-
-
+      
 
 <table class="table" *ngFor="let ed of list">
         <thead class="thead-danger bg-danger">
@@ -22,14 +21,14 @@
         <tbody>
           <tr>
             <td >1</td>
-            <td >{{ ed.Egresado_Codigo_U }}</td>
-            <td>{{ ed.Persona_Ap_Paterno }}</td>
-            <td>{{ ed.Persona_AP_Materno }}</td>
-            <td>{{ ed.Persona_Nombre }}</td>
-            <td >{{ ed.Per_Nro_Documento }}</td>
-            <td >{{ ed.Persona_Celular }}</td>
-            <td >{{ ed.Egre_Fecha_Egreso }}</td>
-            <td >{{ ed.Escuela_Profesional_Nombre }}</td>
+            <td >{{ ed.egresado_codigo_u }}</td>
+            <td>{{ ed.persona_ap_paterno }}</td>
+            <td>{{ ed.persona_ap_materno }}</td>
+            <td>{{ ed.persona_nombre }}</td>
+            <td >{{ ed.per_nro_documento }}</td>
+            <td >{{ ed.persona_celular }}</td>
+            <td >{{ ed.egre_fecha_egreso }}</td>
+            <td >{{ ed.escuela_profesional_nombre }}</td>
             <td ><button type="button" class="btn btn-secondary">Secundario</button></td>
           </tr>
         </tbody>
