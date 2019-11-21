@@ -21,6 +21,7 @@ import { EgresadoDatosIndexComponent } from './egresado-datos-index/egresado-dat
 import { OfertaLaboralComponent } from './oferta-laboral/oferta-laboral.component';
 import { OfertaindexComponent } from './ofertaindex/ofertaindex.component';
 import { OfertaegresadoComponent } from './ofertaegresado/ofertaegresado.component';
+import { PerfilegresadoComponent } from './perfilegresado/perfilegresado.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -61,6 +62,9 @@ const appRoutes: Routes = [
   { path: 'ofertaegresado',  component: OfertaegresadoComponent },
   { path: 'ofertaegresado/:id',  component: OfertaegresadoComponent },
 
+  { path: 'perfilegresado',  component: PerfilegresadoComponent },
+  { path: 'perfilegresado',  component: PerfilegresadoComponent },
+  { path: 'perfilegresado/:id',  component: PerfilegresadoComponent },
 
 
   { path: '**', component: PageNotFoundComponent },
@@ -84,7 +88,8 @@ const appRoutes: Routes = [
     EgresadoDatosIndexComponent,
     OfertaLaboralComponent,
     OfertaindexComponent,
-    OfertaegresadoComponent
+    OfertaegresadoComponent,
+    PerfilegresadoComponent
   ],
   imports: [
     BrowserModule,

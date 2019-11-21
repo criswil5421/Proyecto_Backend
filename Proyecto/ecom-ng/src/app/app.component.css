@@ -4,8 +4,11 @@
 }
 
 
-.navbar navbar-expand-lg navbar-dark bg-primary{
-    background-color: #800000;
+.collapse navbar-collapse{
+    background-color: #5B1B1B;
+}
+.navbar navbar navbar-expand-lg navbar-dark bg-danger{
+    background-color: #5B1B1B;
 }
 
 
@@ -14,7 +17,7 @@
 }
 
 .col-lg-2{
-    background-color: #992e45;
+    background-color: #5B1B1B;
 }
 
 .logoclas{
