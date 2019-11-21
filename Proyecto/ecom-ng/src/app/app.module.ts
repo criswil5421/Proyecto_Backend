@@ -18,6 +18,8 @@ import { CapacitacionIndexComponent } from './capacitacion-index/capacitacion-in
 import { EgresadoIndexComponent } from './egresado-index/egresado-index.component';
 import { CapacitacionFormComponent } from './capacitacion-form/capacitacion-form.component';
 import { EgresadoFormComponent } from './egresado-form/egresado-form.component';
+import { OfertaCursoComponent } from './oferta-curso/oferta-curso.component';
+import { IndexofertaComponent } from './indexoferta/indexoferta.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -38,6 +40,14 @@ const appRoutes: Routes = [
   { path: 'egresadoform',  component: EgresadoFormComponent },
   { path: 'egresadoform/:id',  component: EgresadoFormComponent },
 
+  { path: 'indexoferta',  component: IndexofertaComponent },
+  { path: 'indexoferta',  component: IndexofertaComponent },
+  { path: 'indexoferta/:id',  component: IndexofertaComponent },
+
+  { path: 'oferta-curso',  component: OfertaCursoComponent },
+  { path: 'oferta-curso',  component: OfertaCursoComponent },
+  { path: 'oferta-curso/:id',  component: OfertaCursoComponent },
+
   { path: '**', component: PageNotFoundComponent },
 
 ];
@@ -56,7 +66,9 @@ const appRoutes: Routes = [
     CapacitacionIndexComponent,
     EgresadoIndexComponent,
     CapacitacionFormComponent,
-    EgresadoFormComponent
+    EgresadoFormComponent,
+    OfertaCursoComponent,
+    IndexofertaComponent
   ],
   imports: [
     BrowserModule,

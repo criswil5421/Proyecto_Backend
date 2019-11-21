@@ -1,0 +1,32 @@
+<h1>Agregar Oferta Laboral </h1>
+<form [formGroup]="OfertaCurso" (ngSubmit)="save()">
+    <div [hidden]="false">
+        <input type="text" formControlName="id" name="id" id="id" >
+    </div>
+    <label>
+        Nombre curso:
+        <input type="text" formControlName="nombrecurso" name="nombrecurso" id="nombrecurso" required>
+    </label>
+    <br>
+    <label>
+        Curso Tipo:
+        <input type="text" formControlName="cursotipo" name="cursotipo" id="cursotipo" required>
+    </label>
+    <br>
+    <label>
+        Curso Lugar:
+        <input type="text" formControlName="cursolugar" name="cursolugar" id="cursolugar" required>
+    </label>
+    <br>
+    <label>
+        Curso Modalidad:
+        <input type="text" formControlName="cursomodalidad" name="cursomodalidad" id="cursomodalidad" required>
+    </label>
+    <br>
+    <label>
+        Curso fecha:
+        <input type="text" formControlName="cursofecha" name="dircursofechaeccion" id="cursofecha" required>
+    </label>
+    <br>
+    <button type="submit" [disabled]="!OfertaCurso.valid">Save</button>
+</form>
