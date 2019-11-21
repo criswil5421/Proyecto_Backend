@@ -12,7 +12,7 @@ export class EgresadoDatosIndexComponent implements OnInit {
   list;
   constructor(
     private route: ActivatedRoute,
-    private egredatosService: EgresadoDatosService,
+    private egresadodatosService: EgresadoDatosService,
   ) {
     this.getList();
   }
@@ -20,16 +20,17 @@ export class EgresadoDatosIndexComponent implements OnInit {
     this.getList();
   }
   private getList() {
-    this.egredatosService.getList().subscribe(response => {
+    this.egresadodatosService.getList().subscribe(response => {
       this.list=response;
     });
   }
   delete(id) {
     console.log("delete:"+id);
-    this.egredatosService.delete(id).subscribe(response => {
+    this.egresadodatosService.delete(id).subscribe(response => {
       console.log("de = " + JSON.stringify(response));
       this.getList();
     });
   }
+
 
 }

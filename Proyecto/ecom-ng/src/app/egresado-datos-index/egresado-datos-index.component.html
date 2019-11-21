@@ -3,7 +3,7 @@
     <button class = "btn btn-secundario my-2 my-sm-0" type = "submit"> <font style = "vertical-align: heredar;"> <font style = "vertical-align: heredar;"> Buscar </font> </font> </button>
       
 
-<table class="table" *ngFor="let ed of list">
+<table class="table" >
         <thead class="thead-danger bg-danger">
           <tr>
             <th scope="col">estado</th>
@@ -15,12 +15,13 @@
             <th scope="col">Nro Celular</th>
             <th scope="col">Fecha Egreso</th>
             <th scope="col">Escuela Profesional</th>
+            <th scope="col">Estado</th>
             <th scope="col">Opciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td >1</td>
+          <tr *ngFor="let ed of list">
+            <td >{{ ed.persona_id }}</td>
             <td >{{ ed.egresado_codigo_u }}</td>
             <td>{{ ed.persona_ap_paterno }}</td>
             <td>{{ ed.persona_ap_materno }}</td>
@@ -29,7 +30,8 @@
             <td >{{ ed.persona_celular }}</td>
             <td >{{ ed.egre_fecha_egreso }}</td>
             <td >{{ ed.escuela_profesional_nombre }}</td>
-            <td ><button type="button" class="btn btn-secondary">Secundario</button></td>
+            <td>{{ ed.egresado_estado }}</td>
+            <td ><button type="button"  routerLink="/datosgeneralesindex/{{ ed.persona_id }}" routerLinkActive="active" class="btn btn-secondary">editar</button></td>
           </tr>
         </tbody>
 </table>

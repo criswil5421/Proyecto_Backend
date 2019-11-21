@@ -18,6 +18,7 @@ import { CapacitacionFormComponent } from './capacitacion-form/capacitacion-form
 import { EgresadoFormComponent } from './egresado-form/egresado-form.component';
 import { PersonaIndexComponent } from './persona-index/persona-index.component';
 import { EgresadoDatosIndexComponent } from './egresado-datos-index/egresado-datos-index.component';
+import { DatosGeneralesIndexComponent } from './datos-generales-index/datos-generales-index.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,8 +31,12 @@ const appRoutes: Routes = [
 
 
   { path: 'egresadodatosindex',  component: EgresadoDatosIndexComponent },
-  { path: 'egresadodatosindex',  component: EgresadoDatosIndexComponent },
+  { path: 'egresadodatosform',  component: EgresadoDatosIndexComponent },
   { path: 'egresadodatosindex/:id',  component: EgresadoDatosIndexComponent },
+
+  { path: 'datosgeneralesindex',  component: DatosGeneralesIndexComponent },
+  { path: 'datosgeneralesform',  component: DatosGeneralesIndexComponent },
+  { path: 'datosgeneralesindex/:id',  component: DatosGeneralesIndexComponent },
 
   { path: 'capacitacionindex',  component: CapacitacionIndexComponent },
   { path: 'capacitacionform',  component: CapacitacionFormComponent },
@@ -64,7 +69,8 @@ const appRoutes: Routes = [
     CapacitacionFormComponent,
     EgresadoFormComponent,
     PersonaIndexComponent,
-    EgresadoDatosIndexComponent
+    EgresadoDatosIndexComponent,
+    DatosGeneralesIndexComponent
   ],
   imports: [
     BrowserModule,
