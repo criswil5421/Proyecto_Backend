@@ -8,8 +8,8 @@ import { OfertaLaboralService } from '../services/oferta-laboral.service';
   styleUrls: ['./ofertaindex.component.css']
 })
 export class OfertaindexComponent implements OnInit {
-
-  list;
+  filterPost='';
+  post;
   constructor(
     private route: ActivatedRoute,
     private OfertaLaboralService: OfertaLaboralService,
@@ -21,7 +21,7 @@ export class OfertaindexComponent implements OnInit {
   }
   private getList() {
     this.OfertaLaboralService.getList().subscribe(response => {
-      this.list=response;
+      this.post=response;
     });
   }
   delete(id) {

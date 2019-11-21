@@ -22,6 +22,8 @@ import { OfertaLaboralComponent } from './oferta-laboral/oferta-laboral.componen
 import { OfertaindexComponent } from './ofertaindex/ofertaindex.component';
 import { OfertaegresadoComponent } from './ofertaegresado/ofertaegresado.component';
 import { PerfilegresadoComponent } from './perfilegresado/perfilegresado.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -89,12 +91,14 @@ const appRoutes: Routes = [
     OfertaLaboralComponent,
     OfertaindexComponent,
     OfertaegresadoComponent,
-    PerfilegresadoComponent
+    PerfilegresadoComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       

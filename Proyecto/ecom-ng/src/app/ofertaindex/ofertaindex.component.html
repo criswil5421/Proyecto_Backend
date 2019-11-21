@@ -1,8 +1,13 @@
 
-      <nav class="nuevae"> 
+    <nav class="nuevae"> 
         <button id="botone" type="button" routerLink="/oferta_laboral" class="btn btn-info">Añadir Oferta Laboral</button>
-    </nav>  
-    <table class="table table-hover" *ngFor="let f of list">
+    </nav>
+    <div class="col">
+      <div class="form-group">
+        <input type="text" class="form-control" name="filterPost" placeholder="Search..." [(ngModel)]="filterPost" >
+      </div>
+    </div>
+    <table class="table table-striped" >
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -14,7 +19,7 @@
         
       </thead>
       <tbody>
-            <tr class="table">
+            <tr *ngFor="let f of post  |  filter:filterPost">
                 <th scope="row">{{ f.id }}</th>
                 <td>{{ f.nombreempresa }}</td>
                 <td>{{ f.descripcion }}</td>
