@@ -19,6 +19,7 @@ import { EgresadoFormComponent } from './egresado-form/egresado-form.component';
 import { PersonaIndexComponent } from './persona-index/persona-index.component';
 import { EgresadoDatosIndexComponent } from './egresado-datos-index/egresado-datos-index.component';
 import { DatosGeneralesIndexComponent } from './datos-generales-index/datos-generales-index.component';
+import { ComentarioIndexComponent } from './comentario-index/comentario-index.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +29,9 @@ const appRoutes: Routes = [
   { path: 'clienteindex',  component: ClienteIndexComponent },
   { path: 'clienteform',  component: ClienteFormComponent },
   { path: 'clienteform/:id',  component: ClienteFormComponent },
+
+
+  { path: 'comentarioindex',  component: ComentarioIndexComponent },
 
 
   { path: 'egresadodatosindex',  component: EgresadoDatosIndexComponent },
@@ -70,7 +74,8 @@ const appRoutes: Routes = [
     EgresadoFormComponent,
     PersonaIndexComponent,
     EgresadoDatosIndexComponent,
-    DatosGeneralesIndexComponent
+    DatosGeneralesIndexComponent,
+    ComentarioIndexComponent
   ],
   imports: [
     BrowserModule,
