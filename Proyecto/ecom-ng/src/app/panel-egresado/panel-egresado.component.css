@@ -1,0 +1,27 @@
+.logo{
+    right: 2%;
+    width: 200px;
+    height: 45px;
+}
+#card{
+    margin-top:  15px;
+}
+#barra{
+    background-color: #992e45!important;
+    color: #ffffff!important;
+}
+.conteiner{
+    width: 100%!important;
+}
+#imagenes{
+width: 60%; 
+height: 20%; 
+margin-left: 20%;
+
+}
+#ref{
+    text-align: center;
+}
+.col-lg-12{
+    background-color: #D05043;
+}

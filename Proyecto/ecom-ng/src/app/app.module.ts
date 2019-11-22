@@ -20,6 +20,9 @@ import { CapacitacionFormComponent } from './capacitacion-form/capacitacion-form
 import { EgresadoFormComponent } from './egresado-form/egresado-form.component';
 import { OfertaCursoComponent } from './oferta-curso/oferta-curso.component';
 import { IndexofertaComponent } from './indexoferta/indexoferta.component';
+import { InterfazComponent } from './interfaz/interfaz.component';
+import { LoginComponent } from './login/login.component';
+import { PanelEgresadoComponent } from './panel-egresado/panel-egresado.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -68,7 +71,10 @@ const appRoutes: Routes = [
     CapacitacionFormComponent,
     EgresadoFormComponent,
     OfertaCursoComponent,
-    IndexofertaComponent
+    IndexofertaComponent,
+    InterfazComponent,
+    LoginComponent,
+    PanelEgresadoComponent
   ],
   imports: [
     BrowserModule,
