@@ -14,9 +14,9 @@ class EgresadoDatosController extends Controller
         $egresa = DB::table('egresado')
         ->join('persona' , 'persona.persona_id' , 'egresado.persona_id')
         ->join('escuela_profesional','escuela_profesional.escuela_profesional_id','egresado.escuela_profesional_id')
-        ->select('egresado.egresado_codigo_u' , 'persona.persona_ap_paterno' ,
+        ->select('persona.persona_id','egresado.egresado_codigo_u' , 'persona.persona_ap_paterno' ,
          'persona.persona_ap_materno' , 'persona.persona_nombre' , 'persona.per_nro_documento' , 
-         'persona.persona_celular' , 'egresado.egre_fecha_egreso' , 'escuela_profesional.escuela_profesional_nombre')
+         'persona.persona_celular' , 'egresado.egre_fecha_egreso' , 'persona.per_nro_documento' ,'escuela_profesional.escuela_profesional_nombre','egresado.egresado_estado')
         ->get();
         return response()->json($egresa);
     }
