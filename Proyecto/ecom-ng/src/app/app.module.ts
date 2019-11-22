@@ -20,6 +20,12 @@ import { PersonaIndexComponent } from './persona-index/persona-index.component';
 import { EgresadoDatosIndexComponent } from './egresado-datos-index/egresado-datos-index.component';
 import { DatosGeneralesIndexComponent } from './datos-generales-index/datos-generales-index.component';
 import { ComentariodatosIndexComponent } from './comentariodatos-index/comentariodatos-index.component';
+import { OfertaLaboralComponent } from './oferta-laboral/oferta-laboral.component';
+import { OfertaindexComponent } from './ofertaindex/ofertaindex.component';
+import { OfertaegresadoComponent } from './ofertaegresado/ofertaegresado.component';
+import { PerfilegresadoComponent } from './perfilegresado/perfilegresado.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -55,6 +61,24 @@ const appRoutes: Routes = [
   { path: 'personaform',  component: PersonaIndexComponent },
   { path: 'personaform/:id',  component: PersonaIndexComponent },
 
+
+  
+  { path: 'oferta_laboral',  component: OfertaLaboralComponent },
+  { path: 'oferta_laboral',  component: OfertaLaboralComponent },
+  { path: 'oferta_laboral/:id',  component: OfertaLaboralComponent },
+
+  { path: 'ofertaindex',  component: OfertaindexComponent },
+  { path: 'ofertaindex',  component: OfertaindexComponent },
+  { path: 'ofertaindex/:id',  component: OfertaindexComponent },
+
+  { path: 'ofertaegresado',  component: OfertaegresadoComponent },
+  { path: 'ofertaegresado',  component: OfertaegresadoComponent },
+  { path: 'ofertaegresado/:id',  component: OfertaegresadoComponent },
+
+  { path: 'perfilegresado',  component: PerfilegresadoComponent },
+  { path: 'perfilegresado',  component: PerfilegresadoComponent },
+  { path: 'perfilegresado/:id',  component: PerfilegresadoComponent },
+
   { path: '**', component: PageNotFoundComponent },
 
 ];
@@ -76,11 +100,17 @@ const appRoutes: Routes = [
     EgresadoDatosIndexComponent,
     DatosGeneralesIndexComponent,
     ComentariodatosIndexComponent,
+    OfertaLaboralComponent,
+    OfertaindexComponent,
+    OfertaegresadoComponent,
+    PerfilegresadoComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       

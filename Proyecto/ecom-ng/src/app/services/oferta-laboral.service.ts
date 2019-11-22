@@ -5,9 +5,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class EgresadoDatosService {
-
-  endPoint = 'http://protectolaravel.herokuapp.com/api/egresadodatos';
+export class OfertaLaboralService {
+  
+  endPoint = 'http://localhost:8000/api/oferta_laboral';
 
   constructor(private http: HttpClient) {
   }
@@ -27,4 +27,5 @@ export class EgresadoDatosService {
     console.log(`${this.endPoint}/${id}` );
     return this.http.delete<any>(`${this.endPoint}/${id}`);
   }
+
 }
