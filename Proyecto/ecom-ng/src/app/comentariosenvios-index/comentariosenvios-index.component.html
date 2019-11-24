@@ -1,0 +1,39 @@
+<form [formGroup]="comentarioenviForm" (ngSubmit)="save()">
+        <fieldset>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">comentario id</label>
+                <div class="col-sm-10">
+                  <input  formControlName="comentarios_id" name="comentarios_id" id="comentarios_id" type="text">
+                </div>
+              </div>
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">fecha</label>
+            <div class="col-sm-10">
+              <input  formControlName="comentario_fecha" name="comentario_fecha" id="comentario_fecha" type="date">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">comentario estado</label>
+            <div class="col-sm-10">
+              <input  formControlName="comentario_estado" name="comentario_estado" id="comentario_estado" type="text">
+            </div>
+          </div>
+          <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">comentario tipo</label>
+              <div class="col-sm-10">
+                <input  formControlName="comentario_tipo" name="comentario_tipo" id="comentario_tipo" type="text">
+              </div>
+            </div>
+          <div class="form-group">
+            <label for="exampleTextarea">descripcion</label>
+            <textarea formControlName="comentario_descripcion" name="comentario_descripcion" id="comentario_descripcion" rows="3"></textarea>
+          </div>
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">persona id</label>
+            <div class="col-sm-10">
+              <input  formControlName="persona_id" name="persona_id" id="persona_id" type="text">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!comentarioenviForm">Submit</button>
+        </fieldset>
+</form>

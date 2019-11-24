@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comentario extends Model
+class Cursos_Ofer extends Model
 {
     //
     public $timestamps = false;
-    protected $primaryKey = 'comentarios_id';
+    protected $primaryKey = 'cursos_of_id';
     protected $guarded = ["id"];
-    protected $table ='comentarios';
+    protected $table ='cursos_ofer';
 }

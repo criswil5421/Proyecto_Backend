@@ -31,8 +31,12 @@ Route::get('egresadodatos/index',"EgresadoDatosController@index");
 Route::get('egresadodatos/show/{id}',"EgresadoDatosController@show");
 
 
+Route::get('cursosofer/index',"EgresadoController@index");
+Route::get('cursosofer/show/{egresado_id}',"EgresadoController@show");
+
+
 Route::get('comentario/index',"ComentarioController@index");
-Route::get('comentario/show/{Comentario_Id}',"ComentarioController@show");
+Route::get('comentario/show/{comentarios_id}',"ComentarioController@show");
 
 Route::get('curso/index',"CursoController@index");
 Route::get('curso/show/{curso_id}',"CursoController@show");

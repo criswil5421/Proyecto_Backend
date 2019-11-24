@@ -40,6 +40,13 @@ Route::put('rango/{rango_id}', 'RangoController@update');
 Route::delete('rango/{rango_id}', 'RangoController@destroy');
 
 
+Route::get('cursosofer', 'Cursos_OferController@index');
+Route::get('cursosofer/{cursos_of_id}', 'Cursos_OferController@show');
+Route::post('cursosofer', 'Cursos_OferController@create');
+Route::put('cursosofer/{cursos_of_id}', 'Cursos_OferController@update');
+Route::delete('cursosofer/{cursos_of_id}', 'Cursos_OferController@destroy');
+
+
 Route::get('egresado', 'EgresadoController@index');
 Route::get('egresado/{egresado_id}', 'EgresadoController@show');
 Route::post('egresado', 'EgresadoController@create');
@@ -48,10 +55,10 @@ Route::delete('egresado/{egresado_id}', 'EgresadoController@destroy');
 
 
 Route::get('comentario', 'ComentarioController@index');
-Route::get('comentario/{comentario_id}', 'comentarioController@show');
+Route::get('comentario/{comentarios_id}', 'comentarioController@show');
 Route::post('comentario', 'comentarioController@create');
-Route::put('comentario/{comentario_id}', 'comentarioController@update');
-Route::delete('comentario/{comentario_id}', 'comentarioController@destroy');
+Route::put('comentario/{comentarios_id}', 'comentarioController@update');
+Route::delete('comentario/{comentarios_id}', 'comentarioController@destroy');
 
 Route::get('escuela', 'EscuelaController@index');
 Route::get('escuela/{escuela_profesional_id}', 'escuelaController@show');

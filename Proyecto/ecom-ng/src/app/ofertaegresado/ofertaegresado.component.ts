@@ -11,7 +11,7 @@ export class OfertaegresadoComponent implements OnInit {
   list;
   constructor(
     private route: ActivatedRoute,
-    private OfertaLaboralService: OfertaLaboralService,
+    private ofertalaboraService: OfertaLaboralService,
   ) {
     this.getList();
   }
@@ -19,13 +19,13 @@ export class OfertaegresadoComponent implements OnInit {
     this.getList();
   }
   private getList() {
-    this.OfertaLaboralService.getList().subscribe(response => {
+    this.ofertalaboraService.getList().subscribe(response => {
       this.list=response;
     });
   }
   delete(id) {
     console.log("delete:"+id);
-    this.OfertaLaboralService.delete(id).subscribe(response => {
+    this.ofertalaboraService.delete(id).subscribe(response => {
       console.log("de = " + JSON.stringify(response));
       this.getList();
     });

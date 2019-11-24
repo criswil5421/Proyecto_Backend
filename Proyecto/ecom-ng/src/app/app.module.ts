@@ -26,6 +26,7 @@ import { OfertaegresadoComponent } from './ofertaegresado/ofertaegresado.compone
 import { PerfilegresadoComponent } from './perfilegresado/perfilegresado.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { ComentariosenviosIndexComponent } from './comentariosenvios-index/comentariosenvios-index.component';
 
 
 const appRoutes: Routes = [
@@ -36,6 +37,9 @@ const appRoutes: Routes = [
   { path: 'clienteindex',  component: ClienteIndexComponent },
   { path: 'clienteform',  component: ClienteFormComponent },
   { path: 'clienteform/:id',  component: ClienteFormComponent },
+
+
+  { path: 'comentarioenvio',  component: ComentariosenviosIndexComponent },
 
 
   { path: 'comentarioindex',  component: ComentariodatosIndexComponent },
@@ -104,7 +108,8 @@ const appRoutes: Routes = [
     OfertaindexComponent,
     OfertaegresadoComponent,
     PerfilegresadoComponent,
-    FilterPipe
+    FilterPipe,
+    ComentariosenviosIndexComponent
   ],
   imports: [
     BrowserModule,

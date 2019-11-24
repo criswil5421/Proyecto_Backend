@@ -1,25 +1,25 @@
  <nav class="nuevae"> 
         <button id="botone" type="button" routerLink="/oferta_laboral" class="btn btn-info">Añadir Oferta Laboral</button>
 </nav>  
-    <table class="table table-hover">
-      <thead>
+    <table class="table" >
+      <thead class="thead-danger bg-danger">
         <tr>
-          <th scope="col">ID</th>
+          <th scope="col">oferta id</th>
           <th scope="col">Nombre de la Empresa</th>
           <th scope="col">Descripcion de la Empresa</th>
-          <th scope="col">Telefono</th>
-          <th scope="col">Direccion</th>
+          <th scope="col">requerimientos</th>
+          <th scope="col">descripcion</th>
         </tr>
-        
       </thead>
       <tbody>
-            <tr class="table table-hover"  *ngFor="let f of list">
-                <td>{{ f.id }}</td>
-                <td>{{ f.nombreempresa }}</td>
-                <td>{{ f.descripcion }}</td>
-                <td>{{ f.telefono }}</td>
-                <td>{{ f.direccion }}</td>
-                <td><button type="button"  class="btn btn-blue">Me Interesa</button></td>
-              </tr>
-      </tbody>    
-    </table> 
+        <tr *ngFor="let fe of list">
+                <td>{{ fe.oferta_id }}</td>
+                <td>{{ fe.oferta_nombre_empresa }}</td>
+                <td>{{ fe.oferta_descripcion_re }}</td>
+                <td>{{ fe.oferta_tipo }}</td>
+                
+                <td>{{ fe.oferta_descripcion }}</td>
+          <td ><button type="button"  routerLink="/datosgeneralesindex/{{ ed.persona_id }}" routerLinkActive="active" class="btn btn-secondary">editar</button></td>
+        </tr>
+      </tbody>
+</table>
