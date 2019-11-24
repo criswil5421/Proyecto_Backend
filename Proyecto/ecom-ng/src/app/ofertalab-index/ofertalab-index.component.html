@@ -1,0 +1,19 @@
+<table class="table" >
+    <thead class="thead-danger bg-danger">
+      <tr>
+        <th scope="col">NOMBRE EMPRESA</th>
+        <th scope="col">TIPO</th>
+        <th scope="col">REQUISITOS</th>
+        <th scope="col">DESCRIPCION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ol of list">
+        <td>{{ ol.oferta_nombre_empresa }}</td>
+        <td >{{ ol.oferta_tipo }}</td>
+        <td >{{ ol.oferta_descripcion_re }}</td>
+        <td>{{ ol.oferta_descripcion }}</td>
+        
+      </tr>
+    </tbody>
+</table>

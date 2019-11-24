@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ComentarioService {
 
-  endPoint = 'http://localhost:8000/api/comentario';
+  endPoint = 'https://protectolaravel.herokuapp.com/api/comentario';
 
   constructor(private http: HttpClient) {
   }

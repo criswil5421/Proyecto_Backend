@@ -20,13 +20,13 @@ import { PersonaIndexComponent } from './persona-index/persona-index.component';
 import { EgresadoDatosIndexComponent } from './egresado-datos-index/egresado-datos-index.component';
 import { DatosGeneralesIndexComponent } from './datos-generales-index/datos-generales-index.component';
 import { ComentariodatosIndexComponent } from './comentariodatos-index/comentariodatos-index.component';
-import { OfertaLaboralComponent } from './oferta-laboral/oferta-laboral.component';
-import { OfertaindexComponent } from './ofertaindex/ofertaindex.component';
-import { OfertaegresadoComponent } from './ofertaegresado/ofertaegresado.component';
+import { OfertaLaboralComponent } from './oferta-create/oferta-laboral.component';
 import { PerfilegresadoComponent } from './perfilegresado/perfilegresado.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { ComentariosenviosIndexComponent } from './comentariosenvios-index/comentariosenvios-index.component';
+import { CursosoferIndexComponent } from './cursosofer-index/cursosofer-index.component';
+import { OfertalabIndexComponent } from './ofertalab-index/ofertalab-index.component';
 
 
 const appRoutes: Routes = [
@@ -41,6 +41,8 @@ const appRoutes: Routes = [
 
   { path: 'comentarioenvio',  component: ComentariosenviosIndexComponent },
 
+
+  { path: 'curosofer',  component: CursosoferIndexComponent },
 
   { path: 'comentarioindex',  component: ComentariodatosIndexComponent },
 
@@ -71,13 +73,8 @@ const appRoutes: Routes = [
   { path: 'oferta_laboral',  component: OfertaLaboralComponent },
   { path: 'oferta_laboral/:id',  component: OfertaLaboralComponent },
 
-  { path: 'ofertaindex',  component: OfertaindexComponent },
-  { path: 'ofertaindex',  component: OfertaindexComponent },
-  { path: 'ofertaindex/:id',  component: OfertaindexComponent },
+  { path: 'ofertaindex',  component: OfertalabIndexComponent },
 
-  { path: 'ofertaegresado',  component: OfertaegresadoComponent },
-  { path: 'ofertaegresado',  component: OfertaegresadoComponent },
-  { path: 'ofertaegresado/:id',  component: OfertaegresadoComponent },
 
   { path: 'perfilegresado',  component: PerfilegresadoComponent },
   { path: 'perfilegresado',  component: PerfilegresadoComponent },
@@ -105,11 +102,11 @@ const appRoutes: Routes = [
     DatosGeneralesIndexComponent,
     ComentariodatosIndexComponent,
     OfertaLaboralComponent,
-    OfertaindexComponent,
-    OfertaegresadoComponent,
     PerfilegresadoComponent,
     FilterPipe,
-    ComentariosenviosIndexComponent
+    ComentariosenviosIndexComponent,
+    CursosoferIndexComponent,
+    OfertalabIndexComponent
   ],
   imports: [
     BrowserModule,

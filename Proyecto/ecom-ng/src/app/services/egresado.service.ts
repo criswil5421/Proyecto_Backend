@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class EgresadoService {
 
-  endPoint = 'http://localhost:8000/api/egresado';
+  endPoint = 'https://protectolaravel.herokuapp.com/api/egresado';
 
   constructor(private http: HttpClient) {
   }

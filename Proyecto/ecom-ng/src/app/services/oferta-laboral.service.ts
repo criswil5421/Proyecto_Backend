@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class OfertaLaboralService {
   
   
-  endPoint = 'http://localhost:8000/api/oferta';
+  endPoint = 'https://protectolaravel.herokuapp.com/api/oferta';
 
   constructor(private http: HttpClient) {
   }

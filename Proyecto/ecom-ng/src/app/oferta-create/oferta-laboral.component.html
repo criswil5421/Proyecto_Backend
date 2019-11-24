@@ -1,0 +1,36 @@
+
+<form [formGroup]="oferta_laboralForm" (ngSubmit)="save()">
+        <fieldset>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Nombre Empresa:</label>
+                <div class="col-sm-10">
+                  <input  formControlName="oferta_nombre_empresa" name="oferta_nombre_empresa" id="oferta_nombre_empresa" type="text">
+                </div>
+              </div>
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Requisitos:</label>
+            <div class="col-sm-10">
+              <input  formControlName="oferta_descripcion_re" name="oferta_descripcion_re" id="oferta_descripcion_re" type="text">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label"> Descripcion:</label>
+            <div class="col-sm-10">
+              <input  formControlName="oferta_descripcion" name="oferta_descripcion" id="oferta_descripcion" type="text">
+            </div>
+          </div>
+          <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">tipo</label>
+              <div class="col-sm-10">
+                <input  formControlName="oferta_tipo" name="oferta_tipo" id="oferta_tipo" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">persona</label>
+                    <div class="col-sm-10">
+                      <input  formControlName="persona_id" name="persona_id" id="persona_id" type="text">
+                    </div>
+                  </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!oferta_laboralForm">Submit</button>
+        </fieldset>
+</form>

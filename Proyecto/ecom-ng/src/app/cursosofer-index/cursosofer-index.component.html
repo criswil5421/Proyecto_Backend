@@ -1,0 +1,17 @@
+<p>cursosofer-index works!</p>
+<table class="table" >
+    <thead class="thead-danger bg-danger">
+      <tr>
+        <th scope="col">NOMBRE CURSO</th>
+        <th scope="col">DESCRIPCION</th>
+        <th scope="col">PERSONA ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let co of list">
+        <td >{{ co.curso_nombre }}</td>
+        <td >{{ co.curso_descripcion }}</td>
+        <td>{{ co.persona_id }}</td>
+      </tr>
+    </tbody>
+</table>

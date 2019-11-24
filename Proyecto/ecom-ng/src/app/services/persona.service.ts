@@ -14,17 +14,17 @@ export class PersonaService {
   public getList(): Observable<any> {
     return this.http.get<any>(`${this.endPoint}`);
   }
-  public getById(id): Observable<any> {
-    return this.http.get<any>(`${this.endPoint}/${id}`);
+  public getById(persona_id): Observable<any> {
+    return this.http.get<any>(`${this.endPoint}/${persona_id}`);
   }
   public add(data): Observable<any> {
     return this.http.post<any>(`${this.endPoint}`, data);
   }
-  public update(id, data): Observable<any> {
-    return this.http.put<any>(`${this.endPoint}/${id}`, data);
+  public update(persona_id, data): Observable<any> {
+    return this.http.put<any>(`${this.endPoint}/${persona_id}`, data);
   }
-  public delete(id): Observable<any> {
-    console.log(`${this.endPoint}/${id}` );
-    return this.http.delete<any>(`${this.endPoint}/${id}`);
+  public delete(persona_id): Observable<any> {
+    console.log(`${this.endPoint}/${persona_id}` );
+    return this.http.delete<any>(`${this.endPoint}/${persona_id}`);
   }
 }

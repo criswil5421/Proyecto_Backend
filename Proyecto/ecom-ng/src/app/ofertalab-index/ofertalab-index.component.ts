@@ -3,15 +3,16 @@ import { ActivatedRoute } from '@angular/router';
 import { OfertaLaboralService } from '../services/oferta-laboral.service';
 
 @Component({
-  selector: 'app-ofertaegresado',
-  templateUrl: './ofertaegresado.component.html',
-  styleUrls: ['./ofertaegresado.component.css']
+  selector: 'app-ofertalab-index',
+  templateUrl: './ofertalab-index.component.html',
+  styleUrls: ['./ofertalab-index.component.css']
 })
-export class OfertaegresadoComponent implements OnInit {
+export class OfertalabIndexComponent implements OnInit {
+
   list;
   constructor(
     private route: ActivatedRoute,
-    private ofertalaboraService: OfertaLaboralService,
+    private ofertalabService: OfertaLaboralService,
   ) {
     this.getList();
   }
@@ -19,15 +20,16 @@ export class OfertaegresadoComponent implements OnInit {
     this.getList();
   }
   private getList() {
-    this.ofertalaboraService.getList().subscribe(response => {
+    this.ofertalabService.getList().subscribe(response => {
       this.list=response;
     });
   }
-  delete(id) {
-    console.log("delete:"+id);
-    this.ofertalaboraService.delete(id).subscribe(response => {
+  delete(oferta_id) {
+    console.log("delete:"+oferta_id);
+    this.ofertalabService.delete(oferta_id).subscribe(response => {
       console.log("de = " + JSON.stringify(response));
       this.getList();
     });
   }
+
 }

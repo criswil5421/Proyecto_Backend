@@ -16,22 +16,23 @@ export class OfertaLaboralComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private formBuild: FormBuilder,
-    private OfertaLaboralService: OfertaLaboralService,
+    private ofertacreteService: OfertaLaboralService,
   ) {
   }
 
   ngOnInit() {
     this.oferta_laboralForm = this.formBuild.group({
-      id: [''],
-      nombreempresa: ['', [Validators.required]],
-      descripcion: ['', [Validators.required]],
-      telefono: ['', [Validators.required]],
-      direccion: ['', [Validators.required]],
+      oferta_id: [''],
+      oferta_tipo: ['', [Validators.required]],
+      oferta_descripcion_re: ['', [Validators.required]],
+      oferta_descripcion: ['', [Validators.required]],
+      persona_id: ['', [Validators.required]],
+      oferta_nombre_empresa: ['', [Validators.required]]
     });
     //get data
-    let id = this.route.snapshot.paramMap.get('id');
+    let id = this.route.snapshot.paramMap.get('oferta_id');
     if (id != null) {
-      this.OfertaLaboralService.getById(id).subscribe(response => {
+      this.ofertacreteService.getById(id).subscribe(response => {
         this.oferta_laboralForm.setValue(response);
         console.log(response);
       });
@@ -39,13 +40,13 @@ export class OfertaLaboralComponent implements OnInit {
   }
   save() {
     console.log(this.oferta_laboralForm.value);
-    let id = this.route.snapshot.paramMap.get('id');
+    let id = this.route.snapshot.paramMap.get('oferta_id');
     if (id != null) {
-      this.OfertaLaboralService.update(id, this.oferta_laboralForm.value).subscribe(response => {
+      this.ofertacreteService.update(id, this.oferta_laboralForm.value).subscribe(response => {
         console.log("UPDATE ",response);
       });
     }else{
-      this.OfertaLaboralService.add(this.oferta_laboralForm.value).subscribe(response => {
+      this.ofertacreteService.add(this.oferta_laboralForm.value).subscribe(response => {
         console.log("ADD ",response);
       });
     }
